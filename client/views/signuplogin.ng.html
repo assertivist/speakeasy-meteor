@@ -1,0 +1,72 @@
+<div class="center row" ng-controller="SignupLoginCtrl">
+  <ul class="tabs" data-tabs>
+    <li class='tab-title active'><a href="#loginpanel">Login</a></li>
+    <li class='tab-title'><a href="#signuppanel">Sign-up</a></li>
+  </ul>
+  <div class="tabs-content">
+    <div class="content active" id="loginpanel">
+      <div class="row">
+          <div class="large-12 columns">
+            <div class="signup-panel">
+              <p class="welcome">Welcome back!</p>
+              <form ng-submit="login(existuser)">
+                <div class="row collapse">
+                  <div class="small-2 columns">
+                    <span class="prefix"><i class="fi-mail"></i></span>
+                  </div>
+                  <div class="small-10  columns">
+                    <input type="text" placeholder="Nickname or Email" ng-model="existuser.nameoremail">
+                  </div>
+                </div>
+                <div class="row collapse">
+                  <div class="small-2 columns ">
+                    <span class="prefix"><i class="fi-lock"></i></span>
+                  </div>
+                  <div class="small-10 columns ">
+                    <input type="text" placeholder="Password" ng-model="existuser.password">
+                  </div>
+                </div>
+                <input type="submit" value="Sign In!" class="button"/>
+              </form>
+            </div>
+          </div>
+         </div>
+    </div>
+    <div class="content" id="signuppanel">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="signup-panel">
+            <p class="welcome">Hello, new user!</p>
+            <form ng-submit="signup(newuser)">
+              <div class="row collapse">
+                <div class="small-2  columns">
+                  <span class="prefix"><i class="fi-torso"></i></span>
+                </div>
+                <div class="small-10  columns">
+                  <input type="text" placeholder="Nickname" ng-model="newuser.nickname">
+                </div>
+              </div>
+              <div class="row collapse">
+                <div class="small-2 columns">
+                  <span class="prefix"><i class="fi-mail"></i></span>
+                </div>
+                <div class="small-10  columns">
+                  <input type="text" placeholder="Email" ng-model="newuser.email">
+                </div>
+              </div>
+              <div class="row collapse">
+                <div class="small-2 columns ">
+                  <span class="prefix"><i class="fi-lock"></i></span>
+                </div>
+                <div class="small-10 columns ">
+                  <input type="text" placeholder="Password" ng-model="newuser.password">
+                </div>
+              </div>
+              <input type="submit" value="Sign Up!" class="button"/>
+            </form>
+          </div>
+        </div>
+       </div>
+    </div>
+  </div>
+</div>

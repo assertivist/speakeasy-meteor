@@ -1,0 +1,9 @@
+<p>Nothing here {{ 1 + 4}} ?? OR WHAT ABOUT {{ 1+ 4 > 2 }}?? .</p>
+
+<div id="chat" ng-controller="ChatCtrl">
+  <dl id="chat_dl">
+    <dd ng-repeat="line in chat">
+      {{line.name}} - {{player.status}}
+    </dd>
+  </dl>
+</div>

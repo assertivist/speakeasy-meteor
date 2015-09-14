@@ -1,0 +1,71 @@
+@import ".meteor/local/build/programs/server/assets/packages/matthew_foundation5-sass/foundation";
+
+
+.fixed-bottom {
+  width:100%;
+  left:0;
+  bottom:0;
+  z-index:99;
+  position:fixed;
+}
+
+body,html{
+    height:100%;
+    width:100%;
+}
+
+.off-canvas-wrap,.inner-wrap{
+    height:100%;
+}
+
+div#chat_div{  color:#232323;}
+div.chat { overflow-y:scroll; overflow-x:hidden; margin-bottom:25px; float:left; width:100%;}
+div.chat dl#chat_dl { display:block; float:left; min-width:300px; max-width:1000px; }
+div.chat dl#chat_dl dt { float: left; clear:left; width:120px; text-align:right; height:18px;}
+div.chat dl#chat_dl dt span { }
+div.chat dl#chat_dl dt.server span{ color:#333;padding-top:4px; }
+div.chat dl#chat_dl dd { margin-left:130px; display:block; min-height:18px;}
+div.chat dl#chat_dl dd.server { color:#333; }
+
+
+.center.row {
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  max-width: 500px;
+}
+
+.signup-panel {
+  padding: 15px;
+  i {
+    font-size: 30px;
+    line-height: 50px;
+    color: #999;
+  }
+  form {
+    input, span {
+      height: 50px;
+    }
+  }
+  .welcome {
+    font-size: 26px;
+    text-align: center;
+    margin-left: 0;
+  }
+  .button {
+    margin-left: 35%;
+  }
+}
+
+section.active {
+  padding-top: 75px !important;
+}
+
+p.title {
+  border-bottom: 1px solid #cccccc !important;
+}
+
+.signup-content {
+  height: 450px;
+}

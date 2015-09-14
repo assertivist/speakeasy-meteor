@@ -1,0 +1,48 @@
+<head>
+  <meta name="viewport" content="user-scalable=no, width=device-width, maximum-scale=1, initial-scale=1, minimum-scale=1">
+</head>
+
+<body ng-app='speakeasy'>
+<div id="login-modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Login or Signup</h2>
+  <div ng-include="'client/views/signuplogin.ng.html'"></div>
+</div>
+<div class="page">
+<div class="off-canvas-wrap full-height" data-offcanvas>
+<div class="inner-wrap">
+  <aside class="left-off-canvas-menu" ng-include="'client/views/userlist.ng.html'">
+  </aside>
+
+  <nav class="tab-bar">
+    <section class="left-small">
+      <a class="left-off-canvas-toggle menu-icon" href="#" ><span></span></a>
+    </section>
+    <section class="right tab-bar-section">
+      <h1>Sporkeasry</h1>
+    </section>
+  </nav>
+
+  <div class="row full-heights">
+    <div class="large-9 small-12 columns">
+      <div ng-include="'client/views/chat.ng.html'"></div>
+    </div>
+    <div class="large-3  columns">
+      <ul class="side-nav">
+        <li><a href="#">Section 1</a></li>
+        <li><a href="#">Section 2</a></li>
+        <li><a href="#">Section 3</a></li>
+        <li><a href="#">Section 4</a></li>
+        <li><a href="#">Section 5</a></li>
+        <li><a href="#">Section 6</a></li>
+      </ul>
+      <p><img src="http://placehold.it/320x240&text=LOL"/></p>
+    </div>
+  </div>
+  <a class="exit-off-canvas"></a>
+</div>
+</div>
+</div>
+<div class="contain-to-grid fixed-bottom" ng-include="'client/views/inputbar.ng.html'">
+</div>
+{{initFoundation}}
+</body>

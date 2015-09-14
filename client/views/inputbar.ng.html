@@ -1,0 +1,18 @@
+<nav class="top-bar bottom-bar" data-topbar ng-controller="InputCtrl">
+    <section class="top-bar">
+      <ul class="small-12">
+        <li class="has-form">
+          <div class="row collapse">
+            <div class="large-10 small-9 columns">
+              <input type="text" placeholder="words" ng-model="text" enterPressed="handle_input(text)">
+            </div>
+            <div class="large-2 small-3 columns">
+              <a href="#" class="alert button expand" ng-click="handle_input(text)">speak</a>
+            </div>
+          </div>
+          <div class="row collapse">
+          </div>
+        </li>
+      </ul>
+    </section>
+</nav>

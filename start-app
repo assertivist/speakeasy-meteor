@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+NITROUS_APP_PATH=/home/$NITROUS_USERNAME/code/speakeasy
+HTTP_FORWARDED_COUNT=1
+
+cd $NITROUS_APP_PATH
+HOME=/home/$NITROUS_USERNAME meteor --port 0.0.0.0:$NITROUS_PREVIEW_PORT
