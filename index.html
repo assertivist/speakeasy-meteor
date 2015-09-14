@@ -3,11 +3,11 @@
 </head>
 
 <body ng-app='speakeasy'>
-<div id="login-modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 id="modalTitle">Login or Signup</h2>
-  <div ng-include="'client/views/signuplogin.ng.html'"></div>
-</div>
+{{> sAlert}}
 <div class="page">
+<div id="login-modal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" data-options="close_on_background_click:false;close_on_esc:false;">
+<div ng-include="'client/views/signuplogin.ng.html'"></div>
+</div>
 <div class="off-canvas-wrap full-height" data-offcanvas>
 <div class="inner-wrap">
   <aside class="left-off-canvas-menu" ng-include="'client/views/userlist.ng.html'">
