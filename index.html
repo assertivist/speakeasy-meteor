@@ -15,10 +15,18 @@
 
   <nav class="tab-bar">
     <section class="left-small">
-      <a class="left-off-canvas-toggle menu-icon" href="#" ><span></span></a>
+      <a class="left-off-canvas-toggle icon" href="#" aria-expanded="false">
+        <span class="fi-arrow-left open"></span>
+        <span class="fi-arrow-right closed"></span>
+      </a>
     </section>
     <section class="right tab-bar-section">
       <h1>Sporkeasry</h1>
+    </section>
+    <section class="right-small" ng-show="$root.currentUser">
+      <a href="#" class="icon" ng-click="Meteor.logout">
+        <span class="fi-power"></span>
+      </a>
     </section>
   </nav>
 

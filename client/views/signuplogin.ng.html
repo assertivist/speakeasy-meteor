@@ -4,13 +4,11 @@
     <li class='tab-title active'><a href="#loginpanel">Login</a></li>
     <li class='tab-title'><a href="#signuppanel">Sign Up</a></li>
   </ul>
-
   <div class="tabs-content">
     <div class="content active" id="loginpanel">
       <div class="large-12 columns">
         <div class="signup-panel">
           <p class="welcome">Welcome back!</p>
-
           <form ng-submit="login(existuser)">
             <div class="row collapse">
               <div class="small-2 columns">
@@ -32,21 +30,17 @@
         </div>
       </div>
     </div>
-
     <div class="content" id="signuppanel">
         <div class="large-12 columns">
           <div class="signup-panel">
             <p class="welcome">Hello, new user!</p>
-
             <form ng-submit="signup(newuser)">
               <div class="row collapse">
                 <div class="small-2 columns"><span class="prefix"><i class="fi-torso"></i></span></div>
-
                 <div class="small-10 columns">
-                  <input type="text" placeholder="Nickname" ng-model="newuser.nickname" />
+                  <input type="text" placeholder="Nickname" ng-model="newuser.username" />
                 </div>
               </div>
-
               <div class="row collapse">
                 <div class="small-2 columns">
                   <span class="prefix"><i class="fi-mail"></i></span>

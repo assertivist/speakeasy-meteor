@@ -68,7 +68,7 @@ p.title {
 
 .signup-content {
   height: 450px;
-} 
+}
 
 div#login-modal {
   top:0 !important;
@@ -83,3 +83,9 @@ div.s-alert-box {
     width:50%;
   }
 }
+
+.tab-bar .icon { display:block; padding-left: 13px; color: #fff; height:100%; width:100%; font-size: 26px; }
+.left-off-canvas-toggle.icon[aria-expanded=true] .open { display: inline; }
+.left-off-canvas-toggle.icon[aria-expanded=false] .open { display:none; }
+.left-off-canvas-toggle.icon[aria-expanded=true] .closed { display: none; }
+.left-off-canvas-toggle.icon[aria-expanded=false] .closed { display:inline; }

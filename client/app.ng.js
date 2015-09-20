@@ -1,5 +1,13 @@
 angular.module('speakeasy', ['angular-meteor']);
 
+function showLogin() {
+  $('#login-modal').foundation('reveal','open');
+}
+
+function hideLogin() {
+  $('#login-modal').foundation('reveal','close');
+}
+
 angular.module('speakeasy').controller('PlayerListCtrl', function($scope, $meteor){
   $scope.players = $meteor.collection(Players);
 });
@@ -12,7 +20,7 @@ angular.module('speakeasy').controller('ChatCtrl', function($scope, $meteor) {
 });
 
 angular.module('speakeasy').controller('InputCtrl', function($scope, $meteor) {
-  chat = $meteor.collection(Chat);
+  //var chat = $meteor.collection(Chat);
   $scope.handle_input = function(input) {
     console.log(input);
     var text = input;
@@ -23,7 +31,7 @@ angular.module('speakeasy').controller('InputCtrl', function($scope, $meteor) {
     }
     else {
       //send message
-      chat.insert({
+      Chat.insert({
         uname: Meteor.user().nickname,
         text: text
       });
@@ -39,21 +47,22 @@ angular.module('speakeasy').controller('SignupLoginCtrl', function($scope, $mete
       username: user_obj.username
     }, function(err) {
       if (err) {
-        Session.set('displayMessage', 'Error  - There was an error creating your account.');
+        Session.set('error', err.reason);
       }
       else {
-        $('#login-modal').foundation('reveal','close');
+        hideLogin();
       }
     })
   };
   $scope.login = function (user_obj) {
     Meteor.loginWithPassword(user_obj.nameoremail, user_obj.password, function(err) {
       if (err) {
-        Session.set('displayMessage', 'Login failed - Please check username/password.');
+        console.log(err);
+        Session.set('error', err.reason);
       }
       else {
         //login success
-        $('#login-modal').foundation('reveal','close');
+        hideLogin();
       }
     });
   };
@@ -72,11 +81,12 @@ angular.module('speakeasy').directive('enterPressed', function () {
     };
 });
 
+
 angular.module('speakeasy').run(function($rootScope) {
   console.log('startup');
   if(!Meteor.user()) {
     console.log ("no user!");
-    $('#login-modal').foundation('reveal','open');
+    showLogin();
   }
 });
 
@@ -88,25 +98,25 @@ Accounts.ui.config({
    passwordSignupFields: "USERNAME_AND_OPTIONAL_EMAIL"
 });
 
-Meteor.autorun(function() {
-  // Whenever this session variable changes, run this function.
-  var message = Session.get('displayMessage');
+Tracker.autorun(function() {
+  var message = Session.get('error');
   if (message) {
     sAlert.error(message);
-    Session.set('displayMessage', null);
+    Session.set('error', null);
   }
 });
 
 sAlert.config({
   position: 'top-right',
+  effect: 'stackslide',
   timeout: 5000,
   html: false,
   onRouteClose: true,
   stack: true,
-  // or you can pass an object:
-  // stack: {
-  //     spacing: 10 // in px
-  //     limit: 3 // when fourth alert appears all previous ones are cleared
-  // }
-  offset: 0, // in px - will be added to first alert (bottom or top - depends of the position in config)
+  beep: "/no.mp3",
+  stack: {
+    spacing: 10, // in px
+    limit: 5 // when fourth alert appears all previous ones are cleared
+  },
+  offset: 0 // in px - will be added to first alert (bottom or top - depends of the position in config)
 });
